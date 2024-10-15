@@ -1,6 +1,6 @@
 ---
 import Link from "../components/Link.astro";
-import { MessageSquare, MessageCircle, Github, Youtube, Box, Bird } from "lucide-astro";
+import { Binoculars, MessageCircle, Github, Youtube, Box, Bird } from "lucide-astro";
 import "../styles/global.css";
 import CircleButton from "../components/CircleButton.astro";
 let { title } = Astro.props;
@@ -74,6 +74,7 @@ if (title === "" || title === undefined) {
 							<CircleButton to="https://www.youtube.com/@blrryface"><Youtube /></CircleButton>
 							<CircleButton to="https://bsky.app/profile/blurry.gay"><Bird /></CircleButton>
 							<CircleButton to="https://tech.lgbt/@blurryface"><MessageCircle /></CircleButton>
+							<CircleButton to="https://www.bitview.net/user/blurryface"><Binoculars /></CircleButton>
 						</div>
 					</div>
 					<div class="flex flex-col gap-2 bg-brand-blue-dark p-6">
