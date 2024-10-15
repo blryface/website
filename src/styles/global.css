@@ -1,0 +1,70 @@
+@import url(https://cdn.jsdelivr.net/npm/@intergrav/fonts@1/serve/inter.min.css);
+
+@tailwind base;
+@tailwind components;
+
+* {
+	@apply border-brand-border;
+}
+
+.bgimg {
+	mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+	-webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.cardbg {
+	mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 75%);
+	-webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 75%);
+}
+
+.subtext_dark a {
+	color: rgb(49, 49, 52) !important;
+}
+
+.md h1 {
+	@apply mb-4 border-b text-3xl font-bold;
+}
+.md h2 {
+	@apply my-2 border-b text-2xl font-bold;
+}
+.md h3 {
+	@apply mb-4 text-xl font-bold;
+}
+.md img {
+	@apply m-0.5 inline-block w-fit max-w-full;
+}
+.md p {
+	@apply my-4;
+}
+.md strong {
+	@apply font-bold;
+}
+.md li {
+	@apply mb-4 ml-8 list-disc;
+}
+
+.centre {
+	@apply flex flex-col items-center justify-center gap-2;
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+.lucide {
+	@apply h-5 w-5;
+}
+
+.button {
+	@apply rounded-xl bg-brand-colour px-4 py-3 text-lg font-bold transition active:scale-95;
+}
+
+.circlebutton {
+	@apply flex flex-col items-center justify-center rounded-full p-1 hover:bg-brand-background-secondary;
+}
+
+* {
+	scrollbar-color: #d60049 #161b1d;
+}
+
+@tailwind utilities;

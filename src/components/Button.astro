@@ -1,0 +1,9 @@
+---
+import Link from "./Link.astro";
+
+const { external, showIcon, to, classList, style } = Astro.props;
+---
+
+<span style={style ?? ""} class={"button " + (classList ?? "")}>
+	<Link external={external} showIcon={showIcon} to={to}><slot /></Link>
+</span>

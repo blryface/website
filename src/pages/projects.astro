@@ -1,0 +1,197 @@
+---
+import Button from "../components/Button.astro";
+import Default from "../layouts/Default.astro";
+
+// NE-style projects list. Descriptions can be separated by paragraph, if required.
+const projects = [
+	{
+		name: "CRSS",
+		icon: "https://crss.cc/favicon.ico",
+		colour: "#ffffff",
+		description: [
+			"This is a server made by Blurryface, hosted by TheClashFruit, played by Devin, and sponsored by TheClashFruit's Real Hosting Company Limited Liability Company (TCFRHCLLC) and Pridecraft Studios!",
+		],
+		links: [
+			{
+				name: "Website",
+				to: "https://crss.cc",
+			},
+			{
+				name: "Git",
+				to: "https://git.theclashfruit.me/crss",
+			},
+			{
+				name: "YouTube",
+				to: "https://youtube.com/@crss666",
+			},
+			{
+				name: "BitView",
+				to: "https://bitview.net/crss",
+			},
+			{
+				name: "Modrinth",
+				to: "https://modrinth.com/organization/crss",
+			},
+		],
+	},
+	{
+		name: "NotEssential",
+		icon: "https://notessential.blurry.gay/favicon.ico",
+		colour: "#0056ea",
+		description: ["How and why to not use Essential. Includes specific reasons, and alternatives."],
+		links: [
+			{
+				name: "Website",
+				to: "https://notessential.blurry.gay",
+			},
+			{
+				name: "GitHub",
+				to: "https://github.com/usevital/notessential",
+			},
+		],
+	},
+	{
+		name: "Pridecraft Studios",
+		icon: "https://pridecraft.gay/favicon.png",
+		colour: "#a528a4",
+		description: ["A collective of developers making LGBT-themed modifications to Minecraft."],
+		links: [
+			{
+				name: "Website",
+				to: "https://pridecraft.gay/",
+			},
+			{
+				name: "GitHub",
+				to: "https://git.pridecraft.gay/",
+			},
+			{
+				name: "Youtube",
+				to: "https://youtube.com/@pridecraftstudios",
+			},
+			{
+				name: "Modrinth",
+				to: "https://modrinth.com/organization/pridecraft",
+			},
+		],
+	},
+	{
+		name: "Loop",
+		icon: "https://loopmc.org/favicon.ico",
+		colour: "#ff0050",
+		description: ["We are an organization dedicated to improving the legacy Minecraft experience."],
+		links: [
+			{
+				name: "Website",
+				to: "https://loopmc.org/",
+			},
+			{
+				name: "GitHub",
+				to: "https://github.com/TheLoopProject/",
+			},
+			{
+				name: "Modrinth",
+				to: "https://modrinth.com/organization/loop",
+			},
+		],
+	},
+	{
+		name: "Vital",
+		icon: "https://usevital.github.io/favicon.svg",
+		colour: "#8e4ec6",
+		description: ["Umbrella for all Vital projects & Modpack alternative to Essential."],
+		links: [
+			{
+				name: "Modrinth",
+				to: "https://modrinth.com/organization/vital",
+			},
+			{
+				name: "GitHub",
+				to: "https://modrinth.com/organization/vital",
+			},
+		],
+	},
+	{
+		name: "Bulb",
+		icon: "/branding/bulb.png",
+		colour: "#e4306a",
+		description: ["Useful Minecraft guides for everyone. Launching soon."],
+		links: [
+			{
+				name: "YouTube",
+				to: "https://youtube.com/@bulbguides",
+			},
+		],
+	},
+	{
+		name: "Blurry Designs",
+		icon: "/branding/blurry_designs_temp.png",
+		colour: "#2b6ec4",
+		description: ["My instagram profile for hiring me for designing jobs."],
+		links: [
+			{
+				name: "Instagram",
+				to: "https://instagram.com/blurry.designs",
+			},
+		],
+	},
+	{
+		name: "nineMinecraft",
+		icon: "https://nineminecraft.com/img/9icon.png",
+		colour: "#ff125e",
+		description: ["We're in an identity crisis - Sometimes we're a scam alert, sometimes we're a Knossos mirror."],
+		links: [
+			{
+				name: "Website",
+				to: "https://nineminecraft.com/",
+			},
+			{
+				name: "Legacy Knossos",
+				to: "https://browse.nineminecraft.com/",
+			},
+			{
+				name: "GitHub",
+				to: "https://github.com/nineminecraft",
+			},
+		],
+	},
+];
+
+function getGradientFromProject(colour: string) {
+	return `background: linear-gradient(45deg, ${colour}40 0%, rgba(0,0,0,0) 100%);`;
+}
+---
+
+<Default title="Projects">
+	<span class="text-4xl font-bold">Some <span class="text-brand-colour">projects</span> of mine.</span>
+	<div class="flex h-full flex-col justify-center gap-2">
+		{
+			projects.map((project: any) => (
+				<div class="flex w-full flex-col">
+					<div class="flex w-full flex-col gap-3 p-8" style={getGradientFromProject(project.colour)}>
+						<span class="flex flex-row items-center gap-4 text-4xl font-bold">
+							<img class="h-10 w-10 rounded-xl" src={project.icon} />
+							{project.name}
+						</span>
+						<span class="flex flex-col gap-2">
+							{project.description.map((paragraph: any) => (
+								<span>{paragraph}</span>
+							))}
+						</span>
+						<div class="flex flex-row flex-wrap items-center gap-2">
+							{project.links.map((link: any) => (
+								<Button
+									style={`background-color:${project.colour}`}
+									classList={project.colour === "#ffffff" ? "subtext_dark" : ""}
+									to={link.to}
+									external={true}
+									showIcon={true}>
+									{link.name}
+								</Button>
+							))}
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</Default>

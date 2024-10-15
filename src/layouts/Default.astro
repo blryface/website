@@ -1,0 +1,102 @@
+---
+import Link from "../components/Link.astro";
+import { MessageSquare, MessageCircle, Github, Youtube, Box, Bird } from "lucide-astro";
+import "../styles/global.css";
+import CircleButton from "../components/CircleButton.astro";
+let { title } = Astro.props;
+if (title === "" || title === undefined) {
+	title = "Blurry";
+} else {
+	title += " | Blurry";
+}
+---
+
+<!doctype html>
+<html class="h-full bg-brand-background text-brand-text">
+	<head>
+		<title>{title}</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="title" content="Home - Blurry" />
+		<meta
+			name="description"
+			content="I'm a Brazilian guy that does silly stuff in the internet. They're mostly related to Minecraft though, which is funny."
+		/>
+		<meta name="keywords" content="minecraft,notessential,blryface,blurryface,blry,blurry,pridecraft" />
+		<meta name="robots" content="index" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="English" />
+		<meta name="author" content="Blurry" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Blurry" />
+		<meta property="og:url" content="https://blurry.gay" />
+		<meta property="og:image" content="https://blurry.gay/og.png" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta name="theme-color" content="#d60049" />
+		<meta
+			property="og:description"
+			content="I'm a Brazilian guy that does silly stuff in the internet. They're mostly related to Minecraft though, which is funny."
+		/>
+	</head>
+	<body class="flex h-dvh flex-col">
+		<nav class="flex w-full flex-row justify-center border-b">
+			<div class="flex w-full max-w-[80rem] flex-row items-center justify-center gap-4 p-6 sm:justify-between">
+				<div class="grid w-fit grid-cols-2 sm:w-full">
+					<div class="flex flex-row items-center gap-2">
+						<a class="flex flex-row items-center gap-2 text-xl hover:underline" href="https://blurry.gay">
+							<img class="h-10 w-10 rounded-xl bg-[#4c051950]" src="favicon.png" />
+							Blurry
+						</a>
+					</div>
+					<div class="flex flex-row-reverse items-center gap-2">
+						<Link to="/projects">Projects</Link>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main class="flex w-full flex-auto flex-row justify-center">
+			<div class="w-full max-w-[80rem] p-6">
+				<slot />
+			</div>
+		</main>
+		<footer class="flex w-full flex-row justify-center border-t">
+			<div class="w-full max-w-[80rem] px-6">
+				<div class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+					<div class="flex flex-col gap-3 p-6 [&>*]:fill-brand-purple-light">
+						<a class="flex w-fit flex-row items-center gap-2 text-xl hover:underline" href="/">
+							<img class="h-10 w-10 rounded-xl bg-[#4c051950]" src="favicon.png" />
+							Blurry
+						</a>
+						<div class="flex flex-row gap-1">
+							<CircleButton to="https://modrinth.com/user/blryface"><Box /></CircleButton>
+							<CircleButton to="https://github.com/blryface"><Github /></CircleButton>
+							<CircleButton to="https://www.youtube.com/@blrryface"><Youtube /></CircleButton>
+							<CircleButton to="https://bsky.app/profile/blurry.gay"><Bird /></CircleButton>
+							<CircleButton to="https://tech.lgbt/@blurryface"><MessageCircle /></CircleButton>
+						</div>
+					</div>
+					<div class="flex flex-col gap-2 bg-brand-blue-dark p-6">
+						<span class="font-bold">Info</span>
+						<span class="flex flex-row flex-wrap items-center gap-1 text-brand-text-secondary">
+							This page is
+							<Link showIcon={true} external={true} to="https://github.com/blryface/website">
+								open source.
+							</Link>
+						</span>
+					</div>
+					<div class="flex flex-col gap-2 bg-brand-green-dark p-6">
+						<span class="font-bold">Contact</span>
+						<Link external={true} to="https://bsky.app/profile/blurry.gay">Bluesky <Bird /></Link>
+						<Link external={true} to="https://github.com/blryface">Github<Github /></Link>
+					</div>
+					<div class="flex flex-col gap-2 bg-brand-rose-dark p-6">
+						<span class="font-bold">Extra</span>
+						<span>&copy; 2024 Blurry</span>
+						<span class="text-sm">Site by WorldWidePixel</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

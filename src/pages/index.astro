@@ -1,0 +1,35 @@
+---
+import Link from "../components/Link.astro";
+import Default from "../layouts/Default.astro";
+
+function calculateCurrentAge() {
+	const today = new Date();
+	const dob = new Date("2008/09/14");
+	let age = today.getFullYear() - dob.getFullYear();
+	const m = today.getMonth() - dob.getMonth();
+	if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+		age--;
+	}
+	return age;
+}
+---
+
+<Default>
+	<div class="flex h-full flex-col justify-center gap-2">
+		<div class="flex w-full flex-col gap-4">
+			<span class="text-4xl font-bold">Hey there. I'm <span class="text-brand-colour">Blurry</span>.</span>
+			<span class="flex flex-col gap-2">
+				<span>
+					I'm a Brazilian {calculateCurrentAge()} year old guy that does silly stuff in the internet. They're mostly
+					related to Minecraft though, which is funny.
+				</span>
+				<span>
+					I work on stuff like
+					<Link to="https://pridecraft.gay">Pridecraft</Link>
+					and
+					<Link to="https://notessential.blurry.gay/">NotEssential</Link>.
+				</span>
+			</span>
+		</div>
+	</div>
+</Default>
