@@ -1,0 +1,22 @@
+---
+import Link from "../components/Link.astro";
+import Default from "../layouts/Default.astro";
+
+Astro.response.status = 418;
+---
+
+<Default>
+	<div class="flex h-full flex-col justify-center gap-2">
+		<div class="flex w-full flex-col gap-4">
+			<span class="text-4xl font-bold"
+				><span class="text-brand-colour">418</span>. Something marvelous has happened.</span
+			>
+			<span class="flex flex-col gap-2">
+				<span>
+					This may come as a <i>bit of</i> a shock to you, but
+					<Link to="https://imateapot.xyz">I'm a teapot!</Link>.
+				</span>
+			</span>
+		</div>
+	</div>
+</Default>
