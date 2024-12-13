@@ -1,6 +1,6 @@
 ---
 import Link from "../components/Link.astro";
-import { Binoculars, MessageCircle, Github, Youtube, Box, Bird } from "lucide-astro";
+import { Binoculars, MessageCircle, Github, Youtube, Box, Bird, ChartArea, BadgeX } from "lucide-astro";
 import "../styles/global.css";
 import CircleButton from "../components/CircleButton.astro";
 let { title } = Astro.props;
@@ -63,7 +63,7 @@ if (title === "" || title === undefined) {
 		<footer class="flex w-full flex-row justify-center border-t">
 			<div class="w-full max-w-[80rem] px-6">
 				<div class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-					<div class="flex flex-col gap-3 p-6 [&>*]:fill-brand-purple-light">
+					<div class="[&>*]:fill-brand-purple-light flex flex-col gap-3 p-6">
 						<a class="flex w-fit flex-row items-center gap-2 text-xl hover:underline" href="/">
 							<img class="h-10 w-10 rounded-xl bg-[#4c051950]" src="/favicon.png" />
 							Blurry
@@ -77,29 +77,26 @@ if (title === "" || title === undefined) {
 							<CircleButton to="https://www.bitview.net/user/blurryface"><Binoculars /></CircleButton>
 						</div>
 					</div>
-					<div class="flex flex-col gap-2 bg-brand-blue-dark p-6">
+					<div class="bg-brand-blue-dark flex flex-col gap-2 p-6">
 						<span class="font-bold">Info</span>
+						<span>&copy; 2024 Blurry</span>
 						<span class="flex flex-row flex-wrap items-center gap-1 text-brand-text-secondary">
 							This page is
 							<Link showIcon={true} external={true} to="https://github.com/blryface/website">
 								open source.
 							</Link>
 						</span>
+						<span class="text-sm">Site by WorldWidePixel</span>
 					</div>
-					<div class="flex flex-col gap-2 bg-brand-green-dark p-6">
+					<div class="bg-brand-green-dark flex flex-col gap-2 p-6">
 						<span class="font-bold">Contact</span>
 						<Link external={true} to="https://bsky.app/profile/blurry.gay"><Bird />Bluesky</Link>
 						<Link external={true} to="https://github.com/blryface"><Github />Github</Link>
 					</div>
-					<div class="flex flex-col gap-2 bg-brand-green-dark p-6">
-						<span class="font-bold">Links</span>
-						<Link external={true} to="https://notessential.blurry.gay"><Badge-x />NotEssential</Link>
-						<Link external={true} to="https://status.blurry.gay"><Chart-line />Status</Link>
-					</div>
-					<div class="flex flex-col gap-2 bg-brand-rose-dark p-6">
-						<span class="font-bold">Extra</span>
-						<span>&copy; 2024 Blurry</span>
-						<span class="text-sm">Site by WorldWidePixel</span>
+					<div class="bg-brand-green-dark flex flex-col gap-2 p-6">
+						<span class="font-bold">Resources</span>
+						<Link external={true} to="https://notessential.blurry.gay"><BadgeX />NotEssential</Link>
+						<Link external={true} to="https://status.blurry.gay"><ChartArea />Status</Link>
 					</div>
 				</div>
 			</div>
