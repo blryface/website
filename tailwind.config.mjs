@@ -16,8 +16,8 @@ export default {
 				"generic-purple": "#ba5afa",
 				"generic-rose": "#fa5a87",
 
-				"brand-colour": "#00d65d",
-
+				"brand-colour": "#d60049",
+				
 				"brand-background": "#0b0d0e",
 				"brand-background-secondary": "#161b0d",
 				"brand-border": "#21292c",
