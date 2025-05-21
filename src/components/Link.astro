@@ -8,14 +8,18 @@ const { to, external, showIcon } = Astro.props;
 		<a
 			target="_blank"
 			class="text-brand-text-secondary flex w-fit flex-row items-center gap-2 font-bold hover:underline"
-			href={to}>
+			href={to}
+			>
 			<slot /> {showIcon && <ExternalLink />}
 		</a>
 	)
 }
 {
 	!external && (
-		<a class="text-brand-text-secondary font-bold hover:underline" href={to}>
+		<a
+			class="text-brand-text-secondary font-bold hover:underline"
+			href={to}
+			>
 			<slot />
 		</a>
 	)

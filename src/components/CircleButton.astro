@@ -1,5 +1,5 @@
 ---
-const { to } = Astro.props;
+const { to, label = "This link does not have a label. Please contact Blurry to resolve this." } = Astro.props;
 ---
 
-<a target="_blank" class="circlebutton" href={to}><slot /></a>
+<a aria-label={label} target="_blank" class="circlebutton" href={to}><slot /></a>

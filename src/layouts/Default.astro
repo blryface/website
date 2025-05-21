@@ -12,7 +12,7 @@ if (title === "" || title === undefined) {
 ---
 
 <!doctype html>
-<html class="h-full bg-brand-background text-brand-text">
+<html lang="en" class="h-full bg-brand-background text-brand-text">
 	<head>
 		<title>{title}</title>
 		<meta charset="utf-8" />
@@ -45,7 +45,7 @@ if (title === "" || title === undefined) {
 				<div class="grid w-fit grid-cols-2 sm:w-full">
 					<div class="flex flex-row items-center gap-2">
 						<a class="flex flex-row items-center gap-2 text-xl hover:underline" href="/">
-							<img class="h-10 w-10 rounded-xl bg-[#4c051950]" src="/favicon.png" />
+							<img alt="blryface logo. Red assortment of cubes arranged in grid layout." class="h-10 w-10 rounded-xl bg-[#4c051950]" src="/favicon.png" />
 							Blurry
 						</a>
 					</div>
@@ -69,11 +69,11 @@ if (title === "" || title === undefined) {
 							Blurry
 						</a>
 						<div class="flex flex-row gap-1">
-							<CircleButton to="https://modrinth.com/user/blryface"><Box /></CircleButton>
-							<CircleButton to="https://github.com/blryface"><Github /></CircleButton>
-							<CircleButton to="https://www.youtube.com/@blrryface"><Youtube /></CircleButton>
-							<CircleButton to="https://bsky.app/profile/blurry.gay"><Bird /></CircleButton>
-							<CircleButton to="https://tech.lgbt/@blurryface"><MessageCircle /></CircleButton>
+							<CircleButton label="Blurry on Modrinth" to="https://modrinth.com/user/blryface"><Box /></CircleButton>
+							<CircleButton label="Blurry on GitHub" to="https://github.com/blryface"><Github /></CircleButton>
+							<CircleButton label="Blurry on YouTube" to="https://www.youtube.com/@blrryface"><Youtube /></CircleButton>
+							<CircleButton label="Blurry on Bluesky" to="https://bsky.app/profile/blurry.gay"><Bird /></CircleButton>
+							<CircleButton label="Blurry on the Fediverse" to="https://tech.lgbt/@blurryface"><MessageCircle /></CircleButton>
 						</div>
 					</div>
 					<div class="bg-brand-blue-dark flex flex-col gap-2 p-6">
